@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/connect"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="Connexion/Déconnexion" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="Réglages" />
+        <item
+            android:id="@+id/calendar"
+            android:icon="@drawable/ic_event_note_black_24dp"
+            android:title="Ma liste de soirées" />
+    </group>
+
+    <item android:title="Informations">
+        <menu>
+            <item
+                android:id="@+id/contact"
+                android:icon="@drawable/ic_phone_in_talk_black_24dp"
+                android:title="Contact" />
+            <item
+                android:id="@+id/infoslegales"
+                android:icon="@drawable/ic_live_help_black_24dp"
+                android:title="Mentions légales" />
+        </menu>
+    </item>
+
+</menu>
