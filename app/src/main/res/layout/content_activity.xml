@@ -17,9 +17,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/textTitle2"
             android:layout_width="wrap_content"
@@ -28,11 +26,10 @@
             android:text="X sided dice"
             android:textSize="20sp"
             android:textColor="@color/colorAccent"/>
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@id/details"
-                android:text="Bouton d'accès à la vue détaillée"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </RelativeLayout>

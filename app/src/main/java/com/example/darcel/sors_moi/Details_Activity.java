@@ -21,6 +21,8 @@ import android.widget.TextView;
 public class Details_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String ID_REQUESTED = "IDTest";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
