@@ -10,39 +10,75 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.darcel.sors_moi.Details_Activity"
-    tools:showIn="@layout/app_bar_details_"
     android:background="@drawable/side_nav_bar">
+    <!--tools:showIn="@layout/app_bar_details_"-->
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-        <TextView
-            android:id="@+id/textTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:text="Party details here... Party details here... Party details here... Party details here... Party details here... Party details here..."
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"/>
-    </ScrollView>
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/textTitleParty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Adresse ici-même, 3 rue de l'adresse souhaitée, 340000 Montpellier"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="La soirée de l'année"
+            android:textSize="30sp"
+            android:textColor="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/textTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="top"
+            android:text="Party details here... Party details here... Party details here... Party details here... Party details here... Party details here..."
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"/>
+        <LinearLayout
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            >
+            <TextView
+                android:id="@+id/texteDateParty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20/02/2015"
+                android:textSize="25dp"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_adresse"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adresse ici-même, 3 rue de l'adresse souhaitée, 340000 Montpellier"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                />
+        </LinearLayout>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:text="Ajouter à mon agenda"/>
-    </LinearLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Ajouter à mon agenda"
+            android:drawableLeft="@drawable/ic_event_note_black_24dp"
+            android:layout_gravity="top"
+            />
+    </GridLayout>
 
 </RelativeLayout>
