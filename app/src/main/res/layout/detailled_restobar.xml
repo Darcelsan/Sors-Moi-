@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="La soirée de l'année"
+            android:text="Le bistro des amis"
             android:textSize="30sp"
             android:textColor="@color/colorAccent"/>
         <ImageView
@@ -40,43 +40,10 @@
             android:padding="15dp"
             android:paddingBottom="10dp"
             android:layout_gravity="top"
-            android:text="Party details here... Party details here... Party details here... Party details here... Party details here... Party details here..."
+            android:gravity="top"
+            android:text="Restaurant details here... Restaurant details here... Restaurant details here... Restaurant details here... Restaurant details here... Restaurant details here... "
             android:textSize="20sp"
             android:textColor="@color/colorAccent"/>
-        <LinearLayout
-            android:background="@color/colorAccent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-            <TextView
-                android:id="@+id/texteDateActivity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20/02/2016"
-                android:textSize="25dp"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"/>
-            <TextView
-                android:id="@+id/texteDateLien"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" à "
-                android:textSize="25dp"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"/>
-            <TextView
-                android:id="@+id/texteHourActivity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="21h30"
-                android:textSize="25dp"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"/>
-
-        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="top"
@@ -98,13 +65,28 @@
                 android:textColor="@color/colorAccent"
                 />
         </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="Ajouter à mon agenda"
-            android:drawableLeft="@drawable/ic_event_note_black_24dp"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
             android:layout_gravity="top"
-            />
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <TextView
+                android:id="@+id/telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="0467357612"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Téléphoner"
+                android:drawableLeft="@drawable/ic_phone_in_talk_black_24dp"
+                />
+        </LinearLayout>
     </GridLayout>
 
 </RelativeLayout>
