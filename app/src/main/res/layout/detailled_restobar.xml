@@ -28,7 +28,7 @@
             android:textSize="30sp"
             android:textColor="@color/colorAccent"/>
         <ImageView
-            android:id="@+id/imageactivity"
+            android:id="@+id/imagerestobar"
             android:layout_gravity="top"
             android:layout_height="60dp"
             android:layout_width="match_parent"
