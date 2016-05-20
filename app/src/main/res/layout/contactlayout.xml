@@ -9,25 +9,130 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.darcel.sors_moi.Details_Activity"
-    tools:showIn="@layout/app_bar_details_"
+    tools:context="com.example.darcel.sors_moi.MainActivity"
     android:background="@drawable/side_nav_bar">
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textTitleActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="@string/contactinfo"
+            android:textSize="25sp"
+            android:textColor="@color/colorAccent"/>
+        <ImageView
+            android:id="@+id/imagerestobar"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/textTitle2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/contactinfo"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:text="@string/equipedev"
             android:textSize="20sp"
             android:textColor="@color/colorAccent"/>
-    </ScrollView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <Button
+                android:id="@+id/mailerBerthet"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Mail"
+                android:drawableLeft="@drawable/ic_menu_send"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/adressemailBerthet"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <Button
+                android:id="@+id/mailerCornu"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Mail"
+                android:drawableLeft="@drawable/ic_menu_send"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/adressemailCornu"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <Button
+                android:id="@+id/mailerDangla"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Mail"
+                android:drawableLeft="@drawable/ic_menu_send"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/adressemailDangla"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <Button
+                android:id="@+id/mailerDarcel"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Mail"
+                android:drawableLeft="@drawable/ic_menu_send"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/adressemailDarcel"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+
+    </GridLayout>
 
 </RelativeLayout>

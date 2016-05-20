@@ -11,4 +11,9 @@
     <string name="title_activity_parties_">Sors-moi!</string>
     <string name="mentionslegales">Insérer ici une toutes les mentions légales nécessaires à l\'application...</string>
     <string name="contactinfo">Insérer ici les infos de contact...</string>
+    <string name="equipedev">Benjamin Berthet, Guillaume Cornu, Loïc Dangla et Romain Darcel.</string>
+    <string name="adressemailDarcel">romain.darcel@epsi.fr</string>
+    <string name="adressemailDangla">loic.dangla@epsi.fr</string>
+    <string name="adressemailCornu">guillaume.cornu@epsi.fr</string>
+    <string name="adressemailBerthet">benjamin.berthet@epsi.fr</string>
 </resources>

@@ -99,6 +99,7 @@
                 />
         </LinearLayout>
         <Button
+            android:id="@+id/ajouterAgenda"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Ajouter à mon agenda"
