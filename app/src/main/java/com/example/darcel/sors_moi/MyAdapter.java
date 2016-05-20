@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
 
     @Override
     public void onBindViewHolder(CellHolder cellHolder, int i) {
-        cellHolder.setData("Cellule "+i);
+        cellHolder.setData("Soirée "+i);
     }
 
     @Override

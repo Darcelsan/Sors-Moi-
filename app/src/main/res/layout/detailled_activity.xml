@@ -93,7 +93,7 @@
                 android:id="@+id/planActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Adresse ici-même, 3 rue de l'adresse souhaitée, 34000 Montpellier"
+                android:text="92 rue des Ouloulou, 34000 Montpellier"
                 android:textSize="20sp"
                 android:textColor="@color/colorAccent"
                 />

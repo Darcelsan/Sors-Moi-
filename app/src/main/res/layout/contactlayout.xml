@@ -54,7 +54,7 @@
             <Button
                 android:id="@+id/mailerBerthet"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Mail"
                 android:drawableLeft="@drawable/ic_menu_send"
                 />
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="@string/adressemailBerthet"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
         </LinearLayout>
         <LinearLayout
@@ -76,7 +76,7 @@
             <Button
                 android:id="@+id/mailerCornu"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Mail"
                 android:drawableLeft="@drawable/ic_menu_send"
                 />
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="@string/adressemailCornu"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
         </LinearLayout>
         <LinearLayout
@@ -98,7 +98,7 @@
             <Button
                 android:id="@+id/mailerDangla"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Mail"
                 android:drawableLeft="@drawable/ic_menu_send"
                 />
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="@string/adressemailDangla"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
         </LinearLayout>
         <LinearLayout
@@ -120,7 +120,7 @@
             <Button
                 android:id="@+id/mailerDarcel"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:text="Mail"
                 android:drawableLeft="@drawable/ic_menu_send"
                 />
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
                 android:text="@string/adressemailDarcel"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
         </LinearLayout>
 
