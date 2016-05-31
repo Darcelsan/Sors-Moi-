@@ -23,7 +23,8 @@ import java.util.List;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
     private final Context _context;
-    private String descEvent;
+    private String descEvent = "test";
+    public List<Activites> act;
 
     public MyAdapter(Context c) {
         _context = c;
@@ -31,26 +32,34 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
 
     public void getListEvents (){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://tattooshop.api.montpellier.fr/api/")//"https://api.github.com/"
+                .baseUrl("http://localhost:52871/api/")//"https://api.github.com/"
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Apiservice service = retrofit.create(Apiservice.class);
-        service.listEvenements().enqueue(new Callback<List<Evenements>>() {
+        Call<List<Activites>> ActivitesListRequest = service.listActivites();
+
+        ActivitesListRequest.enqueue(new Callback<List<Activites>>() {
             @Override
-            public void onResponse(Call<List<Evenements>> call, Response<List<Evenements>> response) {
-                for (Evenements events : response.body()) {
-                    descEvent = events.getDescription();
+            public void onResponse(Call<List<Activites>> call, Response<List<Activites>> response) {
+
+                if (response.isSuccessful()) {
+                    act = response.body();
+                    for (Activites activ : act) {
+                        descEvent = activ.getNomActivite();
+                    }
                 }
-                //if (response.isSuccessful()) {
+
                 try {
 
                 } catch (Exception e) {
 
                 }
+
+
             }
 
             @Override
-            public void onFailure(Call<List<Evenements>> call, Throwable t) {
+            public void onFailure(Call<List<Activites>> call, Throwable t) {
                 Log.e("retrofit", t.getLocalizedMessage());
             }
         });
