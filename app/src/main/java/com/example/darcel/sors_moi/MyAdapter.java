@@ -2,32 +2,70 @@ package com.example.darcel.sors_moi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import retrofit2.*;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import com.example.darcel.sors_moi.Webservice.*;
+
+import java.util.List;
+
 /**
- * Created by mbritto on 15/05/15.
+ * Created by Darcel on 15/05/15.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
     private final Context _context;
+    private String descEvent;
 
     public MyAdapter(Context c) {
         _context = c;
     }
 
+    public void getListEvents (){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://tattooshop.api.montpellier.fr/api/")//"https://api.github.com/"
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        Apiservice service = retrofit.create(Apiservice.class);
+        service.listEvenements().enqueue(new Callback<List<Evenements>>() {
+            @Override
+            public void onResponse(Call<List<Evenements>> call, Response<List<Evenements>> response) {
+                for (Evenements events : response.body()) {
+                    descEvent = events.getDescription();
+                }
+                //if (response.isSuccessful()) {
+                try {
+
+                } catch (Exception e) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Evenements>> call, Throwable t) {
+                Log.e("retrofit", t.getLocalizedMessage());
+            }
+        });
+    }
+
     @Override
     public CellHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        getListEvents();
         View cell = LayoutInflater.from(_context).inflate(R.layout.cell,viewGroup,false);
         return new CellHolder(cell);
     }
 
     @Override
     public void onBindViewHolder(CellHolder cellHolder, int i) {
-        cellHolder.setData("Soirée "+i);
+        cellHolder.setData(descEvent);
     }
 
     @Override
