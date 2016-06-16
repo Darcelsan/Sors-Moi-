@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
 
     public void getListEvents (){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:52871/api/")//"https://api.github.com/"
+                .baseUrl(":52871/api/")//"https://api.github.com/"
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Apiservice service = retrofit.create(Apiservice.class);

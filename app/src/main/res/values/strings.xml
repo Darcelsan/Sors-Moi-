@@ -16,4 +16,11 @@
     <string name="adressemailDangla">loic.dangla@epsi.fr</string>
     <string name="adressemailCornu">guillaume.cornu@epsi.fr</string>
     <string name="adressemailBerthet">benjamin.berthet@epsi.fr</string>
+    <string name="titleInscription">Inscription</string>
+    <string name="NomUtilisateur">Nom : </string>
+    <string name="PrenomUtilisateur">Prénom : </string>
+    <string name="MailUtilisateur">Mail : </string>
+    <string name="VilleUtilisateur">Ville : </string>
+    <string name="codePostalUtilisateur">Code Postal : </string>
+    <string name="MotDePasseUtilisateur">Mot de passe : </string>
 </resources>

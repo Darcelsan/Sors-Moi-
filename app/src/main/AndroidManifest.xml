@@ -57,6 +57,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.darcel.sors_moi.MainActivity" />
         </activity>
+        <activity
+            android:name=".ConnectionActivity"
+            android:label="@string/titleInscription"
+            android:parentActivityName=".Parties_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.darcel.sors_moi.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
