@@ -1,6 +1,8 @@
 package com.example.darcel.sors_moi;
 
+import android.app.ListActivity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,11 +19,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.darcel.sors_moi.Webservice.Activites;
+import com.example.darcel.sors_moi.Webservice.Apiservice;
+
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class Parties_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button boutondetails;
+    List<Activites> activit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +71,33 @@ public class Parties_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Apiservice apiserv = new RestAdapter.Builder()
+                .setEndpoint(Apiservice.ENDPOINT)
+                .build()
+                .create(Apiservice.class);
+
+        apiserv.listActivitesAsync(new Callback<List<Activites>>() {
+            @Override
+            public void success(List<Activites> activ, Response response) {
+                //afficherActivites(activ);
+                String activite = response.getBody().toString();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+            }
+        });
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setAdapter(new MyAdapter(this));
+        MyAdapter adapt = new MyAdapter(this);
+        //adapt.act = bodyrepsonse;
+        recyclerView.setAdapter(adapt);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+    }
+
+    public void afficherActivites(List<Activites> activ) {
 
     }
 

@@ -11,9 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import retrofit2.*;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 import com.example.darcel.sors_moi.Webservice.*;
 
 import java.util.List;
@@ -30,51 +27,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
         _context = c;
     }
 
-    public void getListEvents (){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://sors-moi.api.montpellier.epsi.fr/api/")//"https://api.github.com/"
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        Apiservice service = retrofit.create(Apiservice.class);
-        Call<List<Activites>> ActivitesListRequest = service.listActivites();
-
-        ActivitesListRequest.enqueue(new Callback<List<Activites>>() {
-            @Override
-            public void onResponse(Call<List<Activites>> call, Response<List<Activites>> response) {
-
-                if (response.isSuccessful()) {
-                    act = response.body();
-                    for (Activites activ : act) {
-                        descEvent = activ.getNomActivite();
-                    }
-                }
-
-                try {
-
-                } catch (Exception e) {
-
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Activites>> call, Throwable t) {
-                Log.e("retrofit", t.getLocalizedMessage());
-            }
-        });
-    }
 
     @Override
     public CellHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        getListEvents();
         View cell = LayoutInflater.from(_context).inflate(R.layout.cell,viewGroup,false);
         return new CellHolder(cell);
     }
 
     @Override
     public void onBindViewHolder(CellHolder cellHolder, int i) {
-        cellHolder.setData(descEvent);
+        cellHolder.setData(act.toArray()[1].toString());
     }
 
     @Override
