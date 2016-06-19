@@ -23,6 +23,7 @@ public class Activite {
     public String getIdActivite() {
         return idActivite;
     }
+
     /**
      *
      * @param idActivite
