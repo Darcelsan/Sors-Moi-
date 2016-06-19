@@ -1,41 +1,38 @@
 package com.example.darcel.sors_moi;
 
-import android.app.ListActivity;
+
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.darcel.sors_moi.Webservice.Activites;
-import com.example.darcel.sors_moi.Webservice.Apiservice;
+import com.example.darcel.sors_moi.Webservice.Models.Activite;
+import com.example.darcel.sors_moi.Webservice.Models.ApiService;
 
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Parties_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button boutondetails;
-    List<Activites> activit;
+    List<Activite> activit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,35 +68,46 @@ public class Parties_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Apiservice apiserv = new RestAdapter.Builder()
-                .setEndpoint(Apiservice.ENDPOINT)
-                .build()
-                .create(Apiservice.class);
-
-        apiserv.listActivitesAsync(new Callback<List<Activites>>() {
-            @Override
-            public void success(List<Activites> activ, Response response) {
-                //afficherActivites(activ);
-                String activite = response.getBody().toString();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-            }
-        });
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        MyAdapter adapt = new MyAdapter(this);
-        //adapt.act = bodyrepsonse;
-        recyclerView.setAdapter(adapt);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        listActivity();
 
     }
 
-    public void afficherActivites(List<Activites> activ) {
 
-    }
+
+    public void listActivity() {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://sors-moi.api.montpellier.epsi.fr/api/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            ApiService service = retrofit.create(ApiService.class);
+            final Call<List<Activite>> activities = service.listActivity();
+            activities.enqueue(new Callback<List<Activite>>() {
+                @Override
+                public void onResponse(Call<List<Activite>> call, Response<List<Activite>> response) {
+                    Log.w("List Activité", "OK");
+                    Log.w("Response", response.message());
+                    if (response.isSuccessful()) {
+                        activit = response.body();
+                        /*for(int i = 1; i <= response.body().size(); i++) {
+                            Log.w("Reponse envoyée : ",response.body().get(i).getNomActivite());
+                        }*/
+                    }
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+                    MyAdapter adapt = new MyAdapter(getApplicationContext());
+                    adapt.act = activit;
+                    recyclerView.setAdapter(adapt);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                }
+
+                @Override
+                public void onFailure(Call<List<Activite>> call, Throwable t) {
+                    Log.w("List Activité", "KO");
+                    Log.w("Erreur", t.getMessage());
+                }
+            });
+        }
+
+
 
     @Override
     public void onBackPressed() {
