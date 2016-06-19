@@ -1,5 +1,6 @@
 package com.example.darcel.sors_moi;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by Darcel on 20/04/2016.
@@ -21,6 +24,71 @@ public class ContactActivity extends AppCompatActivity
         setContentView(R.layout.contactlayout);
 
         final Intent intent = getIntent();
+
+
+        Button mailerBerthet = (Button) findViewById(R.id.mailerBerthet);
+        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Context context;
+                context = v.getContext();
+                Intent email = new Intent(android.content.Intent.ACTION_SEND);
+                email.setType("text/plain");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.adressemailBerthet)});
+                email.putExtra(Intent.EXTRA_SUBJECT, "À propos de Sors-moi !");
+                email.putExtra(Intent.EXTRA_TEXT, "Soyez indulgent, c'est notre première appli...");
+                //emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(email, "Send mail..."));
+            }
+        });
+
+        Button mailerCornu = (Button) findViewById(R.id.mailerCornu);
+        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Context context;
+                context = v.getContext();
+                Intent email = new Intent(android.content.Intent.ACTION_SEND);
+                email.setType("text/plain");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.adressemailCornu)});
+                email.putExtra(Intent.EXTRA_SUBJECT, "À propos de Sors-moi !");
+                email.putExtra(Intent.EXTRA_TEXT, "Soyez indulgent, c'est notre première appli...");
+                //emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(email, "Send mail..."));
+            }
+        });
+
+        Button mailerDangla = (Button) findViewById(R.id.mailerDangla);
+        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Context context;
+                context = v.getContext();
+                Intent email = new Intent(android.content.Intent.ACTION_SEND);
+                email.setType("text/plain");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.adressemailDangla)});
+                email.putExtra(Intent.EXTRA_SUBJECT, "À propos de Sors-moi !");
+                email.putExtra(Intent.EXTRA_TEXT, "Soyez indulgent, c'est notre première appli...");
+                //emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(email, "Send mail..."));
+            }
+        });
+
+        Button mailerDarcel = (Button) findViewById(R.id.mailerDarcel);
+        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Context context;
+                context = v.getContext();
+                Intent email = new Intent(android.content.Intent.ACTION_SEND);
+                email.setType("text/plain");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{getResources().getString(R.string.adressemailDarcel)});
+                email.putExtra(Intent.EXTRA_SUBJECT, "À propos de Sors-moi !");
+                email.putExtra(Intent.EXTRA_TEXT, "Soyez indulgent, c'est notre première appli...");
+                //emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(email, "Send mail..."));
+            }
+        });
 
 
     }

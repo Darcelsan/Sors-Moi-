@@ -3,11 +3,19 @@ package com.example.darcel.sors_moi;
 /**
  * Created by Darcel on 06/04/2016.
  */
+
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class Details_Activity extends AppCompatActivity
         /*implements NavigationView.OnNavigationItemSelectedListener */{
@@ -39,7 +47,46 @@ public class Details_Activity extends AppCompatActivity
         TextView planActivity = (TextView) findViewById(R.id.planActivity);
 
         textTitleActivity.setText(getIntent().getExtras().get("NomActivity").toString());
+        textTitle2.setText(getIntent().getExtras().get("CategorieActivity").toString());
+        planActivity.setText(getIntent().getExtras().get("LieuActivity").toString());
 
+        Button ajouterAgenda = (Button) findViewById(R.id.ajouterAgenda);
+        ajouterAgenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar beginTime = Calendar.getInstance();
+                beginTime.set(2012, 0, 19, 7, 30);
+                Calendar endTime = Calendar.getInstance();
+                endTime.set(2012, 0, 19, 8, 30);
+                Intent intent = new Intent(Intent.ACTION_INSERT)
+                        .setData(CalendarContract.Events.CONTENT_URI)
+                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                                beginTime.getTimeInMillis())
+                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                                endTime.getTimeInMillis())
+                        .putExtra(CalendarContract.Events.TITLE, getIntent().getExtras().get("NomActivity").toString())
+                        .putExtra(CalendarContract.Events.DESCRIPTION, getIntent().getExtras().get("CategorieActivity").toString())
+                        .putExtra(CalendarContract.Events.EVENT_LOCATION, getIntent().getExtras().get("LieuActivity").toString())
+                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
+                startActivity(intent);
+            }
+        });
+
+        planActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a Uri from an intent string. Use the result to create an Intent.
+                Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4192?q=" + Uri.encode(getIntent().getExtras().get("LieuActivity").toString()));
+
+                // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                // Make the Intent explicit by setting the Google Maps package
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                // Attempt to start an activity that can handle the Intent
+                startActivity(mapIntent);
+            }
+        });
 
 
     }
