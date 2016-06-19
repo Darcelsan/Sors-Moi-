@@ -3,17 +3,8 @@ package com.example.darcel.sors_moi;
 /**
  * Created by Darcel on 06/04/2016.
  */
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -40,6 +31,15 @@ public class Details_Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //navigationView.setNavigationItemSelectedListener(this);*/
+
+        TextView textTitleActivity = (TextView) findViewById(R.id.textTitleActivity);
+        TextView textTitle2 = (TextView) findViewById(R.id.textTitle2);
+        TextView texteDateActivity = (TextView) findViewById(R.id.texteDateActivity);
+        TextView texteHourActivity = (TextView) findViewById(R.id.texteHourActivity);
+        TextView planActivity = (TextView) findViewById(R.id.planActivity);
+
+        textTitleActivity.setText(getIntent().getExtras().get("NomActivity").toString());
+
 
 
     }

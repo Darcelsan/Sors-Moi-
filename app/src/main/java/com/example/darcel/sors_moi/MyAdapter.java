@@ -2,16 +2,14 @@ package com.example.darcel.sors_moi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.darcel.sors_moi.Webservice.*;
+import com.example.darcel.sors_moi.Webservice.Models.Activite;
 
 import java.util.List;
 
@@ -21,7 +19,7 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
     private final Context _context;
     private String descEvent = "test";
-    public List<Activites> act;
+    public List<Activite> act;
 
     public MyAdapter(Context c) {
         _context = c;
@@ -36,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
 
     @Override
     public void onBindViewHolder(CellHolder cellHolder, int i) {
-        cellHolder.setData(act.toArray()[1].toString());
+        cellHolder.setData(act.get(i).getNomActivite());
     }
 
     @Override
@@ -64,8 +62,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CellHolder>{
 
         @Override
         public void onClick(View view) {
+            int i = this.getAdapterPosition();
             Intent detailIntent = new Intent(_context,Details_Activity.class);
+            detailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             detailIntent.putExtra(Details_Activity.ID_REQUESTED, _data);
+            detailIntent.putExtra("IDActivity",i);
+            detailIntent.putExtra("CategorieActivity",act.get(i).getCategorieActivite());
+            detailIntent.putExtra("LieuActivity",act.get(i).getLieuActivite());
+            detailIntent.putExtra("NomActivity",act.get(i).getNomActivite());
             _context.startActivity(detailIntent);
         }
     }
