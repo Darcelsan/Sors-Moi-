@@ -148,14 +148,18 @@ public class Parties_Activity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.connect) {
-
+            Intent intent = new Intent(Parties_Activity.this, ConnectionActivity.class);
+            startActivity(intent);
         } else if (id == R.id.settings) {
 
         } else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
-
+            Intent intent = new Intent(Parties_Activity.this, ContactActivity.class);
+            startActivity(intent);
         } else if (id == R.id.infoslegales) {
+            Intent intent = new Intent(Parties_Activity.this, MentionsLegalesActivity.class);
+            startActivity(intent);
 
         }
 

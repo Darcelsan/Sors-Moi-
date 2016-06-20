@@ -43,7 +43,7 @@ public class ContactActivity extends AppCompatActivity
         });
 
         Button mailerCornu = (Button) findViewById(R.id.mailerCornu);
-        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+        mailerCornu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Context context;
@@ -59,7 +59,7 @@ public class ContactActivity extends AppCompatActivity
         });
 
         Button mailerDangla = (Button) findViewById(R.id.mailerDangla);
-        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+        mailerDangla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Context context;
@@ -75,7 +75,7 @@ public class ContactActivity extends AppCompatActivity
         });
 
         Button mailerDarcel = (Button) findViewById(R.id.mailerDarcel);
-        mailerBerthet.setOnClickListener(new View.OnClickListener() {
+        mailerDarcel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Context context;
