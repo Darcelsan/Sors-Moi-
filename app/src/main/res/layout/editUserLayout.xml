@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/titleInscription"
+            android:text="@string/titleModification"
             android:textSize="25sp"
             android:textColor="@color/colorAccent"
             android:paddingBottom="15dp"
@@ -40,11 +40,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
+                android:text="@string/tilisateur"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent"/>
+            <EditText
+                android:id="@+id/idInscri2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:text="@string/tilisateur"/>
+            <Button
+                android:gravity="top"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/getuser"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/recup"
+                android:drawableLeft="@drawable/ic_menu_share"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:layout_gravity="top"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
                 android:text="@string/NomUtilisateur"
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/nomInscri"
+                android:id="@+id/nomInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
@@ -65,7 +96,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/prenomInscri"
+                android:id="@+id/prenomInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
@@ -86,7 +117,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/mailInscri"
+                android:id="@+id/mailInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
@@ -107,7 +138,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/villeInscri"
+                android:id="@+id/villeInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
@@ -128,7 +159,7 @@
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/codePostalInscri"
+                android:id="@+id/codePostalInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
@@ -148,11 +179,11 @@
                 android:textSize="15sp"
                 android:textColor="@color/colorAccent"/>
             <EditText
-                android:id="@+id/motDePasseInscri"
+                android:id="@+id/motDePasseInscri2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey"
-                android:inputType="textWebPassword"/>
+                android:inputType="textWebPassword" />
         </LinearLayout>
         <Button
             android:gravity="top"
@@ -160,11 +191,11 @@
             android:id="@+id/confirmInscription"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="S'inscrire"
+            android:text="@string/modifier"
             android:drawableLeft="@drawable/ic_menu_send"
             />
         <TextView
-            android:id="@+id/validationInscri"
+            android:id="@+id/validationInscri2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"

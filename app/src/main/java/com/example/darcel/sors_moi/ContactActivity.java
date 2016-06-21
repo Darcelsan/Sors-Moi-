@@ -127,6 +127,12 @@ public class ContactActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.connect) {
+            Intent intent = new Intent(ContactActivity.this, ConnectionActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.action_settings) {
+            Intent intent = new Intent(ContactActivity.this, EditUserActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.calendar) {
 
@@ -135,6 +141,7 @@ public class ContactActivity extends AppCompatActivity
         } else if (id == R.id.infoslegales) {
             Intent intent = new Intent(ContactActivity.this, MentionsLegalesActivity.class);
             startActivity(intent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

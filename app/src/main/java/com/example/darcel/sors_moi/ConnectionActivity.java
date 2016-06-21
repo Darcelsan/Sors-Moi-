@@ -59,7 +59,7 @@ public class ConnectionActivity extends AppCompatActivity
             EditText motDePasseUtili = (EditText) findViewById(R.id.motDePasseInscri);
             motDePasse = motDePasseUtili.getText().toString();
 
-        Button confirmInscription = (Button) findViewById(R.id.confirmInscription);
+        confirmInscription = (Button) findViewById(R.id.confirmInscription);
         confirmInscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +79,7 @@ public class ConnectionActivity extends AppCompatActivity
                 .build();
         ApiService service = retrofit.create(ApiService.class);
         Utilisateur utilisat = new Utilisateur(nomUtilisateur, prenomUtilisateur, mailUtilisateur, villeUtilisateur, codePostalUtilisateur, motDePasse);
-        Call<Utilisateur> call = service.createUser(utilisat);
+        Call<Utilisateur> call = service.createUtilisateur(utilisat);
         call.enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
@@ -130,13 +130,20 @@ public class ConnectionActivity extends AppCompatActivity
 
         if (id == R.id.connect) {
 
+
+        } else if (id == R.id.action_settings) {
+            Intent intent = new Intent(ConnectionActivity.this, EditUserActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
-
+            Intent intent = new Intent(ConnectionActivity.this, ContactActivity.class);
+            startActivity(intent);
         } else if (id == R.id.infoslegales) {
             Intent intent = new Intent(ConnectionActivity.this, MentionsLegalesActivity.class);
             startActivity(intent);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

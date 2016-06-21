@@ -59,6 +59,12 @@ public class MentionsLegalesActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.connect) {
+            Intent intent = new Intent(MentionsLegalesActivity.this, ConnectionActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.action_settings) {
+            Intent intent = new Intent(MentionsLegalesActivity.this, EditUserActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.calendar) {
 
@@ -66,6 +72,7 @@ public class MentionsLegalesActivity extends AppCompatActivity
             Intent intent = new Intent(MentionsLegalesActivity.this, ContactActivity.class);
             startActivity(intent);
         } else if (id == R.id.infoslegales) {
+
 
         }
 

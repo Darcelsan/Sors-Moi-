@@ -30,7 +30,18 @@ public class Utilisateur {
     private String motDePasse;
 
     public Utilisateur(String nomUtilisateur, String prenomUtilisateur, String mailUtilisateur, String villeUtilisateur, String codePostalUtilisateur, String motDePasse) {
-        this.idUtilisateur = "0909091";
+        this.idUtilisateur = "69696969";
+        this.nomUtilisateur = nomUtilisateur;
+        this.prenomUtilisateur = prenomUtilisateur;
+        this.mailUtilisateur = mailUtilisateur;
+        this.villeUtilisateur = villeUtilisateur;
+        this.codePostalUtilisateur = codePostalUtilisateur;
+        this.roleUtilisateur = "Utilisateur";
+        this.motDePasse = motDePasse;
+    }
+
+    public Utilisateur(String ID, String nomUtilisateur, String prenomUtilisateur, String mailUtilisateur, String villeUtilisateur, String codePostalUtilisateur, String motDePasse) {
+        this.idUtilisateur = ID;
         this.nomUtilisateur = nomUtilisateur;
         this.prenomUtilisateur = prenomUtilisateur;
         this.mailUtilisateur = mailUtilisateur;

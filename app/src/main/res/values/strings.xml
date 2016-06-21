@@ -25,4 +25,8 @@ Directeur de publication et webmaster : Jean-Louis KitKat. Nous contacter à cet
     <string name="VilleUtilisateur">Ville</string>
     <string name="codePostalUtilisateur">Code Postal</string>
     <string name="MotDePasseUtilisateur">Mot de passe</string>
+    <string name="titleModification">Modification</string>
+    <string name="tilisateur">ID</string>
+    <string name="modifier">Modifier</string>
+    <string name="recup">Récupérer</string>
 </resources>

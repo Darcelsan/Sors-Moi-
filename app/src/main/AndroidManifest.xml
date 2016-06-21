@@ -51,7 +51,7 @@
         <activity
             android:name=".Details_Activity_KitKat"
             android:label="@string/title_activity_parties_"
-            android:parentActivityName=".Parties_Activity"
+            android:parentActivityName=".KitKat_Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -60,7 +60,7 @@
         <activity
             android:name=".MentionsLegalesActivity"
             android:label="@string/title_activity_parties_"
-            android:parentActivityName=".Parties_Activity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -69,7 +69,7 @@
         <activity
             android:name=".ContactActivity"
             android:label="@string/title_activity_parties_"
-            android:parentActivityName=".Parties_Activity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -78,7 +78,16 @@
         <activity
             android:name=".ConnectionActivity"
             android:label="@string/titleInscription"
-            android:parentActivityName=".Parties_Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.darcel.sors_moi.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EditUserActivity"
+            android:label="@string/titleModification"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
