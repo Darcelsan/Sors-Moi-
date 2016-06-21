@@ -1,5 +1,6 @@
 package com.example.darcel.sors_moi;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -7,72 +8,48 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
+import com.example.darcel.sors_moi.Webservice.Models.Activite;
+
+import java.util.List;
+
+public class KitKat_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button boutonsoiree;
-    Button boutonbars;
-    Button boutonresto;
-    Button boutonconcert;
-    public final static String BOUTON_CHOISI = "Rien";
+    Button boutondetails;
+    List<Activite> activit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_main);
-        boutonsoiree = (Button) findViewById(R.id.boutonsoiree);
-
-        boutonsoiree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Parties_Activity.class);
-                intent.putExtra(BOUTON_CHOISI, "Soiree");
-                startActivity(intent);
-            }
-        });
-
-        boutonbars = (Button) findViewById(R.id.boutonbars);
-
-        boutonbars.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Parties_Activity.class);
-                intent.putExtra(BOUTON_CHOISI, "Bar");
-                startActivity(intent);
-            }
-        });
-
-        boutonresto = (Button) findViewById(R.id.boutonresto);
-
-        boutonresto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, KitKat_Activity.class);
-                intent.putExtra(BOUTON_CHOISI, "KitKat");
-                startActivity(intent);
-            }
-        });
-
-        boutonconcert = (Button) findViewById(R.id.boutonconcert);
-
-        boutonconcert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Parties_Activity.class);
-                intent.putExtra(BOUTON_CHOISI, "Concert");
-                startActivity(intent);
-            }
-        });
-
+        setContentView(R.layout.activity_parties_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final Intent intent = getIntent();
+
+        String Cat = intent.getStringExtra(MainActivity.BOUTON_CHOISI);
+
+        TextView textTitle = (TextView) findViewById(R.id.textTitle2);
+        if (Cat.equals("Soiree")) {
+            textTitle.setText("Soirées");
+        }
+        if (Cat.equals("Bar")) {
+            textTitle.setText("Bars");
+        }
+        if (Cat.equals("KitKat")) {
+            textTitle.setText(R.string.resto);
+        }
+        if (Cat.equals("Concert")) {
+            textTitle.setText("Concerts");
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,7 +59,21 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        listActivity();
+
     }
+
+
+
+    public void listActivity() {
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+                    MyAdapterKitKat adapt = new MyAdapterKitKat(getApplicationContext());
+                    recyclerView.setAdapter(adapt);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        }
+
+
 
     @Override
     public void onBackPressed() {
@@ -97,7 +88,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.parties_, menu);
         return true;
     }
 
@@ -123,17 +114,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.connect) {
-            Intent intent = new Intent(MainActivity.this, ConnectionActivity.class);
+            Intent intent = new Intent(KitKat_Activity.this, ConnectionActivity.class);
             startActivity(intent);
         } else if (id == R.id.settings) {
 
         } else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
-            Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+            Intent intent = new Intent(KitKat_Activity.this, ContactActivity.class);
             startActivity(intent);
         } else if (id == R.id.infoslegales) {
-            Intent intent = new Intent(MainActivity.this, MentionsLegalesActivity.class);
+            Intent intent = new Intent(KitKat_Activity.this, MentionsLegalesActivity.class);
             startActivity(intent);
 
         }

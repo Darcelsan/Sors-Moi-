@@ -53,7 +53,7 @@ public class Parties_Activity extends AppCompatActivity
             textTitle.setText("Bars");
         }
         if (Cat.equals("Resto")) {
-            textTitle.setText("Restaurants");
+            textTitle.setText(R.string.resto);
         }
         if (Cat.equals("Concert")) {
             textTitle.setText("Concerts");

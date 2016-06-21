@@ -5,11 +5,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="soiree">Soirées</string>
     <string name="bars">Bars</string>
-    <string name="resto">Restaurants</string>
+    <string name="resto">KitKat</string>
     <string name="concerts">Concerts</string>
     <string name="action_settings">Paramètres</string>
     <string name="title_activity_parties_">Sors-moi!</string>
-    <string name="mentionslegales">Insérer ici une toutes les mentions légales nécessaires à l\'application...</string>
+    <string name="mentionslegales">L\'application est éditée par la crème de la crème (pas anglaise), SARL (société à responsabilité limitée) au capital social de 4.000.000.000.000 euros (RCS Nanterre B 753 000 027), domiciliée au 1 rue du Kit Kat 92100 Boulogne-Billancourt. Numéro SIRET : 69696969696.
+
+Directeur de publication et webmaster : Jean-Louis KitKat. Nous contacter à cette adresse : kitkatBGdu34@gmail.com</string>
     <string name="contactinfo">Insérer ici les infos de contact...</string>
     <string name="equipedev">Benjamin Berthet, Guillaume Cornu, Loïc Dangla et Romain Darcel.</string>
     <string name="adressemailDarcel">romain.darcel@epsi.fr</string>
