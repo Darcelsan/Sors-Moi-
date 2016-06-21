@@ -116,7 +116,6 @@ public class KitKat_Activity extends AppCompatActivity
         if (id == R.id.connect) {
             Intent intent = new Intent(KitKat_Activity.this, ConnectionActivity.class);
             startActivity(intent);
-        } else if (id == R.id.settings) {
 
         } else if (id == R.id.calendar) {
 

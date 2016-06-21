@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -82,6 +83,7 @@ public class ConnectionActivity extends AppCompatActivity
         call.enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
+                Log.d("RETROFIT POST", response.message());
                 TextView confirm = (TextView) findViewById(R.id.validationInscri);
                 confirm.setText("Utilisateur créé avec succès !");
             }
@@ -127,8 +129,6 @@ public class ConnectionActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.connect) {
-
-        } else if (id == R.id.settings) {
 
         } else if (id == R.id.calendar) {
 

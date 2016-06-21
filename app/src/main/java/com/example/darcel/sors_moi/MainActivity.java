@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.connect) {
             Intent intent = new Intent(MainActivity.this, ConnectionActivity.class);
             startActivity(intent);
-        } else if (id == R.id.settings) {
 
         } else if (id == R.id.calendar) {
 

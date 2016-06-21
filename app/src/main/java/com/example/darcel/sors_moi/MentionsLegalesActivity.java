@@ -60,8 +60,6 @@ public class MentionsLegalesActivity extends AppCompatActivity
 
         if (id == R.id.connect) {
 
-        } else if (id == R.id.settings) {
-
         } else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
