@@ -5,11 +5,7 @@
         <item
             android:id="@+id/connect"
             android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Connexion/Déconnexion" />
-        <item
-            android:id="@+id/settings"
-            android:icon="@drawable/ic_build_black_24dp"
-            android:title="Réglages" />
+            android:title="Inscription" />
         <item
             android:id="@+id/calendar"
             android:icon="@drawable/ic_event_note_black_24dp"

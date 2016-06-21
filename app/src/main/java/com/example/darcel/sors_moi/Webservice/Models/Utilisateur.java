@@ -1,4 +1,5 @@
 package com.example.darcel.sors_moi.Webservice.Models;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -27,6 +28,19 @@ public class Utilisateur {
     @SerializedName("MotDePasse")
     @Expose
     private String motDePasse;
+
+    public Utilisateur(String nomUtilisateur, String prenomUtilisateur, String mailUtilisateur, String villeUtilisateur, String codePostalUtilisateur, String motDePasse) {
+        this.idUtilisateur = "0909091";
+        this.nomUtilisateur = nomUtilisateur;
+        this.prenomUtilisateur = prenomUtilisateur;
+        this.mailUtilisateur = mailUtilisateur;
+        this.villeUtilisateur = villeUtilisateur;
+        this.codePostalUtilisateur = codePostalUtilisateur;
+        this.roleUtilisateur = "Utilisateur";
+        this.motDePasse = motDePasse;
+    }
+
+
     /**
      *
      * @return

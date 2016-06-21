@@ -35,7 +35,7 @@ public interface ApiService {
     @GET("Utilisateur")
     Call<List<Utilisateur>> listUser();
     @POST("Utilisateur")
-    Call<Utilisateur> createUser(@Body Evenement monUser);
+    Call<Utilisateur> createUser(@Body Utilisateur monUser);
     @DELETE("Utilisateur")
     Call<Utilisateur> deleteUser(@Query("id") int IdUtilisateur);
 }
