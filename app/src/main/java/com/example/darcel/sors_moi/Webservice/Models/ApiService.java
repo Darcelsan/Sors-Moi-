@@ -41,6 +41,6 @@ public interface ApiService {
     Call<Utilisateur> updateUser(@Body Utilisateur monUser);
     @GET("Utilisateurs/{ID}")
     Call<Utilisateur> getUser(@Path("ID") String ID);
-    @DELETE("Utilisateur")
+    @DELETE("Utilisateurs")
     Call<Utilisateur> deleteUser(@Query("id") int IdUtilisateur);
 }

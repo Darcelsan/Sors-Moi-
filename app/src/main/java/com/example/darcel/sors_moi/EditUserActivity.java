@@ -115,6 +115,10 @@ public class EditUserActivity extends AppCompatActivity
                     codePostalUtili.setText(user.getCodePostalUtilisateur());
                     motDePasseUtili.setText(user.getMotDePasse());
                 }
+                else {
+                    TextView confirm = (TextView) findViewById(R.id.validationInscri2);
+                    confirm.setText("Utilisateur introuvable.");
+                }
             }
 
             @Override
@@ -132,13 +136,31 @@ public class EditUserActivity extends AppCompatActivity
                 .build();
         ApiService service = retrofit.create(ApiService.class);
         Utilisateur utilisat = new Utilisateur(idUtilisateur, nomUtilisateur, prenomUtilisateur, mailUtilisateur, villeUtilisateur, codePostalUtilisateur, motDePasse);
-        Call<Utilisateur> call = service.updateUser(utilisat);
+        Call<Utilisateur> call = service.deleteUser(Integer.parseInt(idUtilisateur));
         call.enqueue(new Callback<Utilisateur>() {
             @Override
             public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
-                Log.d("RETROFIT POST", response.message());
-                TextView confirm = (TextView) findViewById(R.id.validationInscri2);
-                confirm.setText("Utilisateur modifié avec succès !");
+                Log.d("RETROFIT DELETE", response.message());
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://sors-moi.api.montpellier.epsi.fr/api/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                ApiService service = retrofit.create(ApiService.class);
+                Utilisateur utilisat = new Utilisateur(idUtilisateur, nomUtilisateur, prenomUtilisateur, mailUtilisateur, villeUtilisateur, codePostalUtilisateur, motDePasse);
+                Call<Utilisateur> call2 = service.createUtilisateur(utilisat);
+                call2.enqueue(new Callback<Utilisateur>() {
+                    @Override
+                    public void onResponse(Call<Utilisateur> call2, Response<Utilisateur> response) {
+                        Log.d("RETROFIT CREATE", response.message());
+                        TextView confirm = (TextView) findViewById(R.id.validationInscri2);
+                        confirm.setText("Utilisateur modifié avec succès !");
+                    }
+
+                    @Override
+                    public void onFailure(Call<Utilisateur> call, Throwable t) {
+
+                    }
+                });
             }
 
             @Override
@@ -146,6 +168,8 @@ public class EditUserActivity extends AppCompatActivity
 
             }
         });
+
+
     }
 
     @Override
