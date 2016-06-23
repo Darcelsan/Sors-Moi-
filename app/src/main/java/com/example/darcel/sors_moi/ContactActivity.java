@@ -134,7 +134,7 @@ public class ContactActivity extends AppCompatActivity
             Intent intent = new Intent(ContactActivity.this, EditUserActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.calendar) {
+        //} else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
 

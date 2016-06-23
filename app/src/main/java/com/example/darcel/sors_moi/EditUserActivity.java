@@ -212,7 +212,7 @@ public class EditUserActivity extends AppCompatActivity
         } else if (id == R.id.action_settings) {
 
 
-        } else if (id == R.id.calendar) {
+        //} else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
             Intent intent = new Intent(EditUserActivity.this, ContactActivity.class);

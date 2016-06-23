@@ -43,6 +43,7 @@ public class Details_Activity extends AppCompatActivity
         TextView textTitleActivity = (TextView) findViewById(R.id.textTitleActivity);
         TextView textTitle2 = (TextView) findViewById(R.id.textTitle2);
         TextView texteDateActivity = (TextView) findViewById(R.id.texteDateActivity);
+
         TextView texteHourActivity = (TextView) findViewById(R.id.texteHourActivity);
         TextView planActivity = (TextView) findViewById(R.id.planActivity);
 
@@ -55,9 +56,9 @@ public class Details_Activity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Calendar beginTime = Calendar.getInstance();
-                beginTime.set(2012, 0, 19, 7, 30);
+                beginTime.set(2016, 6, 20, 21, 30);
                 Calendar endTime = Calendar.getInstance();
-                endTime.set(2012, 0, 19, 8, 30);
+                endTime.set(2016, 6, 20, 23, 30);
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
                         .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,

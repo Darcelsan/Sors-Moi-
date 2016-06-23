@@ -55,7 +55,7 @@
                 android:id="@+id/texteDateActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20/02/2016"
+                android:text="20/07/2016"
                 android:textSize="25dp"
                 android:textColor="@color/colorPrimary"
                 android:gravity="center"/>

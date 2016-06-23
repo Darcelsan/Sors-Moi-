@@ -135,7 +135,7 @@ public class ConnectionActivity extends AppCompatActivity
             Intent intent = new Intent(ConnectionActivity.this, EditUserActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.calendar) {
+        //} else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
             Intent intent = new Intent(ConnectionActivity.this, ContactActivity.class);

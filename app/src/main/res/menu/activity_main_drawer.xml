@@ -10,10 +10,10 @@
             android:id="@+id/action_settings"
             android:icon="@drawable/ic_menu_manage"
             android:title="Modifier" />
-        <item
+        <!--<item
             android:id="@+id/calendar"
             android:icon="@drawable/ic_event_note_black_24dp"
-            android:title="Ma liste de soirées" />
+            android:title="Ma liste de soirées" />-->
     </group>
 
     <item android:title="Informations">

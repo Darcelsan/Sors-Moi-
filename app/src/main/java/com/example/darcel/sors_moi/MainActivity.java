@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, EditUserActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.calendar) {
+        //} else if (id == R.id.calendar) {
 
         } else if (id == R.id.contact) {
             Intent intent = new Intent(MainActivity.this, ContactActivity.class);
